@@ -1,0 +1,172 @@
+<!doctype HTML>
+<html>
+	<head>
+		<title>codedamn HTML Playground</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+        <div id="box">
+            <div class="formReq">
+                
+                <input type="text" class="formInput" required>
+                
+                <label for="">Name</label>
+              <div></div>
+            </div>
+             <div class="formReq">
+                
+                <input type="text" class="formInput" required>
+                
+                <label for="">Email</label>
+              <div></div>
+            </div> 
+            <div class="formReq">
+                
+                <input type="number" class="formInput" required>
+                
+                <label for="">Registered Number</label>
+              <div></div>
+            </div> 
+            <div class="formReq">
+                
+                <input type="text" class="formInput" required>
+                
+                <label for="">Password</label>
+              <div></div>
+            </div> 
+            <div class="formReq">
+                
+                <input type="text" class="formInput" required>
+                
+                <label for="">Conform Password</label>
+              <div></div>
+            </div>
+            
+           
+        </div>
+
+
+
+<style>
+
+body {
+	padding: 0px;
+	margin: 0;
+	
+
+    background-image: linear-gradient(to right, #833ab4,#fd1d1d,#fcb045);
+
+}
+#box{
+    
+    /* display: flex; */
+   /* position: relative; */
+    width: 400px;
+    height: 450px;
+    margin:6vh auto;
+ box-shadow: 1px 1px 2px 6px #ffffff8e;
+    background-color: #ffffff8e;
+    
+
+   
+}
+.formReq {
+    position: relative;
+
+
+/* margin-top: 80px; */
+margin-left: 5% ;
+
+width: 350px;
+height: 80px ;
+text-align: center;
+
+border-radius: 10px;
+
+
+
+    
+
+
+}
+.formReq .formInput {
+    /* position: absolute; */
+    width: 90%;
+    height: 30px;
+    margin-top: 30px;
+    border: none;
+    font-size: 17px;
+    border-bottom: 2px rgb(0, 0, 0) solid ;
+     /* background-color: #ffffff; */
+     background: transparent;
+     padding: 0;
+     outline: none;
+     /* pointer-events:visibleStroke; */
+    
+}
+
+.formReq label{
+    position: absolute;
+    top:35px;
+    left: 22px;
+    font-size: 15px;
+        color:#000000;
+
+
+}
+
+.formReq input:focus ~ label,
+.formReq input:valid ~ label{
+    color:#833ab4;
+    transform: translate(-8px,-23px);
+    
+
+    font-size: 16px;
+    font-weight: 700;
+    transition: all .3s;
+    
+    
+}
+.formReq div{
+    position: absolute;
+    bottom: 18px;
+    left: 17px;
+    
+}
+.formReq input:focus ~ div
+{
+    background-color: #833ab4;
+    height: 3px;
+    animation: full 0.3s forwards;
+}
+@keyframes full {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 92%;
+    }
+   
+}
+.formReq input:valid ~ div{
+    background-color: #833ab4;
+    width: 90%;
+    height: 3px;
+    /* transition: all 0s; */
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+		<script src="/script.js"></script>
+	</body>
+</html>
