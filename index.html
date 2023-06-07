@@ -2,80 +2,75 @@
 <html>
 
 <head>
-    <title>codedamn HTML Playground</title>
+    <title>Validation Form</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
+
 </head>
 
 <body>
    <div id="heading"> <h1> Validation Form</h1></div>
     <div id="box">
-        <form action="">
+        <form action="" name="myform"  method="post">
             <div class="formReq">
 
                 <input type="text" class="formInput" id="name" required>
 
-                <label for="name">Name</label>
+                <label class="label"  for="name">Name</label>
                 <ion-icon name="person-outline" class="logo"></ion-icon>
                 <ion-icon name="information-circle-outline" class="info"></ion-icon>
-                <p class="instructions"></p>
-                   
-                
-                <div class="line"></div>
+                <p class="instructions"></p>             
+                <div class="line forjs"></div>
             </div>
             <div class="formReq">
 
-                <input type="email" class="formInput" id="emailId" required>
+                <input type="text" class="formInput" id="emailId" required>
 
-                <label for="emailId">Email</label>
+                <label class="label"  for="emailId">Email</label>
                 <ion-icon name="mail-outline" class="logo"></ion-icon>
                 <ion-icon name="information-circle-outline" class="info"></ion-icon>
 
                 <p class="instructions"></p>
-                <div class="line"></div>
+                <div class="line forjs"></div>
             </div>
             <div class="formReq">
 
                 <input type="number" class="formInput" id="num" required>
 
-                <label for="num">Registered Number</label>
+                <label class="label"  for="num">Registered Number</label>
                 <ion-icon name="call-outline" class="logo"></ion-icon>
                 <ion-icon name="information-circle-outline" class="info"></ion-icon>
                 <p class="instructions"></p>
-                <div class="line"></div>
+                <div class="line forjs"></div>
             </div>
             <div class="formReq">
 
                 <input type="password" class="formInput" id="pass" required>
 
-                <label for="pass">Password</label>
+                <label class="label" for="pass">Password</label>
                 <ion-icon name="information-circle-outline" class="info"></ion-icon>
                 <p class="instructions"></p>
-                <div class="line"></div>
+                <div class="line forjs"></div>
             </div>
             <div class="formReq">
 
                 <input type="password" class="formInput" id="cpass" required>
 
-                <label for="cpass">Confirm Password</label>
+                <label class="label"  for="cpass">Confirm Password</label>
                 <ion-icon name="information-circle-outline" class="info"></ion-icon>
                 <p class="instructions"></p>
-                <div class="line"></div>
+                <div class="line forjs"></div>
             </div>
-            <div class="sub">
-                <input type="submit" value="Submit">
+            <div class="sub" onclick="sub()">
+                <input type="submit" type="submit" id="submit" value="Submit">
             </div>
         </form>
 
     </div>
-
-<p id="passInstr">    - Atleast 8 characters <br>
-    - Contain atleast 1 alpha <br>
-    - Contain atleast 1 numeric <br>
-    - Contain atleast 1 special char</p>
+	
+	
 	<style>
-		body {
+	body {
     padding: 0px;
     margin: 0;
 
@@ -84,24 +79,25 @@
     background-color: rgb(150, 128, 145);
 
 }
-#heading{
-   
-    margin: 30px auto ;
+
+#heading {
+
+    margin: 20px auto;
     margin-bottom: 0px;
 
-    width: 250px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
 }
-#heading h1{
-    padding-left:5px ;
 
-   
+/* #heading h1{
     
-}
+} */
 #box {
 
     /* display: flex; */
     /* position: relative; */
-     width: 300px;
+    width: 300px;
     height: 500px;
     margin: 0 auto;
     margin-top: 50px;
@@ -118,19 +114,12 @@
     position: relative;
 
 
-    /* margin-top: 80px; */
+
     margin-left: 8%;
 
     width: 250px;
     height: 80px;
     text-align: center;
-
-    /* border-radius: 10px; */
-
-
-
-
-
 
 }
 
@@ -150,7 +139,7 @@
 
 }
 
-.formReq label {
+.formReq .label {
     position: absolute;
     top: 35px;
     left: 22px;
@@ -160,8 +149,8 @@
 
 }
 
-.formReq input:focus~label,
-.formReq input:valid~label {
+.formReq input:focus ~ .label,
+.formReq input:valid ~ .label {
     color: #833ab4;
     /* color: rgb(255, 0, 0); */
     transform: translate(-8px, -23px);
@@ -236,6 +225,7 @@ input::-webkit-inner-spin-button {
     font-size: 22px;
 }
 
+
 .instructions {
     position: absolute;
     display: none;
@@ -287,32 +277,258 @@ input::-webkit-inner-spin-button {
     display: none;
 }
 
+.validLine {
+    position: absolute;
+    bottom: 18px;
+    left: 12px;
+    width: 90%;
+    height: 3px;
+    background-color: green;
+
+}
+
+.invalidLine {
+    position: absolute;
+    bottom: 18px;
+    left: 12px;
+    width: 90%;
+    height: 3px;
+    background-color: red;
+
+}
+
+.validLabel {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    color: green;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.invalidLabel {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    color: red;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+
 
 
 
 @media (max-width:350px) {
-     #box {
+    #box {
         background-color: rgb(150, 128, 145);
-    box-shadow: none;
-    border-radius: none;
+        box-shadow: none;
+        border-radius: none;
 
     }
 
-   
+
 
 }
 	</style>
 
+<p id="passInstr">    - Atleast 8 characters <br>
+    - Contain atleast 1 alpha <br>
+    - Contain atleast 1 numeric <br>
+    - Contain atleast 1 special char</p>
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script >
-	    var instructions=document.getElementsByClassName('instructions');
+	var instructions = document.getElementsByClassName('instructions');
 
-instructions[0].innerHTML='Ex: abcdef xyz',
-instructions[1].innerHTML='Ex: abc@gamil.com',
-instructions[2].innerHTML='No. should start with +91 ';
-instructions[3].innerHTML=document.getElementById('passInstr').innerHTML;
-instructions[4].innerHTML='Password should same as upper field';
+instructions[0].innerHTML = 'Ex: abcdef xyz',
+    instructions[1].innerHTML = 'Ex: abc@gamil.com',
+    instructions[2].innerHTML = 'No. should be of 10 digits ';
+instructions[3].innerHTML = document.getElementById('passInstr').innerHTML;
+instructions[4].innerHTML = 'Password should same as upper field';
+
+var line = document.querySelectorAll('.forjs');
+var label = document.querySelectorAll('label');
+var input = document.querySelectorAll('input');
+
+// For Name
+input[0].addEventListener('keyup', (e) => {
+
+    var value = input[0].value;
+    // console.log(value);
+
+    line[0].classList.remove('line');
+    line[0].classList.remove('validLine');
+    line[0].classList.add('invalidLine');
+    label[0].classList.remove('label');
+    label[0].classList.remove('validLabel');
+    label[0].classList.add('invalidLabel');
+
+    if (value.length > 5 ) {
+        line[0].classList.remove('invalidLine');
+        line[0].classList.add('validLine');
+        label[0].classList.remove('invalidLabel');
+        label[0].classList.add('validLabel');
+    }
+    else if (value.length == 0) {
+        line[0].classList.remove('invalidLine');
+        label[0].classList.remove('invalidLabel');
+        line[0].classList.add('line');
+        label[0].classList.add('label');
+
+    }
+})
+
+// For Email
+input[1].addEventListener('keyup', (e) => {
+
+    var value = input[1].value;
+    // console.log(value);
+
+    line[1].classList.remove('line');
+    line[1].classList.remove('validLine');
+    line[1].classList.add('invalidLine');
+    label[1].classList.remove('label');
+    label[1].classList.remove('validLabel');
+    label[1].classList.add('invalidLabel');
+
+    if (value.includes('@') && value[0]!='@') {
+        line[1].classList.remove('invalidLine');
+        line[1].classList.add('validLine');
+        label[1].classList.remove('invalidLabel');
+        label[1].classList.add('validLabel');
+    }
+    else if (value.length == 0) {
+        line[1].classList.remove('invalidLine');
+        label[1].classList.remove('invalidLabel');
+        line[1].classList.add('line');
+        label[1].classList.add('label');
+
+    }
+})
+
+// For Number
+input[2].addEventListener('keyup', (e) => {
+
+    var value = input[2].value;
+    // console.log(value);
+
+    line[2].classList.remove('line');
+    line[2].classList.remove('validLine');
+    line[2].classList.add('invalidLine');
+    label[2].classList.remove('label');
+    label[2].classList.remove('validLabel');
+    label[2].classList.add('invalidLabel');
+
+
+    if (  value.length==10 && value.indexOf('.') == -1) {
+        line[2].classList.remove('invalidLine');
+        line[2].classList.add('validLine');
+        label[2].classList.remove('invalidLabel');
+        label[2].classList.add('validLabel');
+    }
+    else if (value.length == 0) {
+        line[2].classList.remove('invalidLine');
+        label[2].classList.remove('invalidLabel');
+        line[2].classList.add('line');
+        label[2].classList.add('label');
+
+    }
+})
+
+// For Password
+
+function checkPass(str){
+    return /[0-9]/.test(str) && /[a-z]/.test(str) && /[!,@,#,$,%,^,&,*]/.test(str);
+}
+input[3].addEventListener('keyup', (e) => {
+
+    var value = input[3].value;
+    // console.log(value);
+
+    line[3].classList.remove('line');
+    line[3].classList.remove('validLine');
+    line[3].classList.add('invalidLine');
+    label[3].classList.remove('label');
+    label[3].classList.remove('validLabel');
+    label[3].classList.add('invalidLabel');
+
+
+    if (checkPass(value) && value.length>7) {
+        line[3].classList.remove('invalidLine');
+        line[3].classList.add('validLine');
+        label[3].classList.remove('invalidLabel');
+        label[3].classList.add('validLabel');
+    }
+    else if (value.length == 0) {
+        line[3].classList.remove('invalidLine');
+        label[3].classList.remove('invalidLabel');
+        line[3].classList.add('line');
+        label[3].classList.add('label');
+
+    }
+})
+
+// For Confirm Password
+
+input[4].addEventListener('keyup', (e) => {
+
+    var value = input[4].value;
+    // console.log(value);
+
+    line[4].classList.remove('line');
+    line[4].classList.remove('validLine');
+    line[4].classList.add('invalidLine');
+    label[4].classList.remove('label');
+    label[4].classList.remove('validLabel');
+    label[4].classList.add('invalidLabel');
+
+console.log(input[3].value);
+console.log(input[4].value);
+    if ( line[3].classList.contains('validLine') && input[3].value==input[4].value ) {
+        line[4].classList.remove('invalidLine');
+        line[4].classList.add('validLine');
+        label[4].classList.remove('invalidLabel');
+        label[4].classList.add('validLabel');
+    }
+    else if (value.length == 0) {
+        line[4].classList.remove('invalidLine');
+        label[4].classList.remove('invalidLabel');
+        line[4].classList.add('line');
+        label[4].classList.add('label');
+
+    }
+})
+
+function formSubmit(){
+if(line[0].classList.contains('validLine')&&
+line[1].classList.contains('validLine')&&
+line[2].classList.contains('validLine')&&
+line[3].classList.contains('validLine')&&
+line[4].classList.contains('validLine')) return true;
+
+else return false;
+
+}
+
+var form=document.querySelector('form');
+form.addEventListener('submit',(e)=>{
+
+if(formSubmit){
+     if(formSubmit) 
+    form.action="submit.html";
+}
+
+})
+
+function sub(){
+    if(formSubmit)
+    document.querySelector('#submit').style.backgroundColor= "green";
+}
+
+
 
 
 
