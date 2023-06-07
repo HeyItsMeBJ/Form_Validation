@@ -1,0 +1,261 @@
+body {
+    padding: 0px;
+    margin: 0;
+
+
+    /* background-image: linear-gradient(to right, #833ab4,#fd1d1d,#fcb045); */
+    background-color: rgb(150, 128, 145);
+
+}
+
+#heading {
+
+    margin: 20px auto;
+    margin-bottom: 0px;
+
+    width: 350px;
+    display: flex;
+    justify-content: center;
+}
+
+/* #heading h1{
+    
+} */
+#box {
+
+    /* display: flex; */
+    /* position: relative; */
+    width: 300px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 2px 3px 3px 10px #ffffffa6;
+    background-color: #ffffffa6;
+
+
+    border-radius: 10px;
+
+
+}
+
+.formReq {
+    position: relative;
+
+
+
+    margin-left: 8%;
+
+    width: 250px;
+    height: 80px;
+    text-align: center;
+
+}
+
+.formReq .formInput {
+    /* position: absolute; */
+    width: 90%;
+    height: 30px;
+    margin-top: 30px;
+    border: none;
+    font-size: 17px;
+    border-bottom: 2px rgb(0, 0, 0) solid;
+    /* background-color: #ffffff; */
+    background: transparent;
+    padding: 0;
+    outline: none;
+    /* pointer-events:visibleStroke; */
+
+}
+
+.formReq .label {
+    position: absolute;
+    top: 35px;
+    left: 22px;
+    font-size: 15px;
+    color: #000000;
+
+
+}
+
+.formReq input:focus ~ .label,
+.formReq input:valid ~ .label {
+    color: #833ab4;
+    /* color: rgb(255, 0, 0); */
+    transform: translate(-8px, -23px);
+
+
+    font-size: 16px;
+    font-weight: 700;
+    transition: all .3s;
+
+
+}
+
+.formReq .line {
+    position: absolute;
+    bottom: 18px;
+    left: 12px;
+
+}
+
+.formReq input:focus~.line {
+    background-color: #833ab4;
+    height: 3px;
+    animation: full 0.3s forwards;
+}
+
+@keyframes full {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 91%;
+    }
+
+}
+
+.formReq input:valid~.line {
+    background-color: #833ab4;
+    width: 90%;
+    height: 3px;
+    /* transition: all 0s; */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.formReq .logo {
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    font-size: 22px;
+
+}
+
+.formReq input:focus~.logo {
+    font-size: 0px;
+}
+
+.formReq .info {
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    font-size: 0px;
+
+}
+
+.formReq input:focus~.info {
+
+    font-size: 22px;
+}
+
+
+.instructions {
+    position: absolute;
+    display: none;
+    background-color: #ffffff;
+    border: 1px black solid;
+    padding: 5px;
+    top: 0px;
+    right: 40px;
+    font-size: 12px;
+    z-index: 20;
+
+}
+
+.formReq .info:hover~.instructions,
+.formReq .info:active~.instructions {
+
+    display: block;
+
+    background-color: #ffffff;
+}
+
+.sub {
+
+    width: 250px;
+    height: 50px;
+    background-color: red;
+    margin: 25px auto;
+    border-radius: 3px;
+    /* border: 2px grey solid; */
+    box-shadow: -1px 1px 8px rgba(20, 20, 20, 0.6);
+
+
+}
+
+.sub input {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    border: none;
+    border-radius: 3px;
+    color: white;
+}
+
+.sub input:active {
+    box-shadow: -1px 1px 8px rgba(20, 20, 20, 0.4);
+}
+
+#passInstr {
+    display: none;
+}
+
+.validLine {
+    position: absolute;
+    bottom: 18px;
+    left: 12px;
+    width: 90%;
+    height: 3px;
+    background-color: green;
+
+}
+
+.invalidLine {
+    position: absolute;
+    bottom: 18px;
+    left: 12px;
+    width: 90%;
+    height: 3px;
+    background-color: red;
+
+}
+
+.validLabel {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    color: green;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.invalidLabel {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    color: red;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+
+
+
+
+@media (max-width:350px) {
+    #box {
+        background-color: rgb(150, 128, 145);
+        box-shadow: none;
+        border-radius: none;
+
+    }
+
+
+
+}
