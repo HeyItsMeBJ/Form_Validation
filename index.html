@@ -11,7 +11,7 @@
 <body>
    <div id="heading"> <h1> Validation Form</h1></div>
     <div id="box">
-        <form action="" name="myform"  method="post">
+        <form action="" name="myform"  method="get">
             <div class="formReq">
 
                 <input type="text" class="formInput" id="name" required>
@@ -517,10 +517,7 @@ var form=document.querySelector('form');
 form.addEventListener('submit',(e)=>{
 
 if(formSubmit){
-     if(formSubmit) 
-    form.action="https://github.com/HeyItsMeBJ/Form_Validation/blob/main/submit.html";
-}
-
+    form.action="submit.html";
 })
 
 function sub(){
